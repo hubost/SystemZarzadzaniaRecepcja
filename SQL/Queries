@@ -1,0 +1,119 @@
+-- Tables creation
+
+CREATE TABLE logowanie (
+    id           INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id_pracownik INTEGER NOT NULL,
+    haslo        VARCHAR(20)
+);
+
+CREATE TABLE pracownik (
+    id              INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    login           VARCHAR(15) NOT NULL,
+    imie            VARCHAR(30),
+    nazwisko        VARCHAR(30),
+    plec            VARCHAR(1),
+    pesel           VARCHAR(11) NOT NULL,
+    numer_telefonu  VARCHAR(9),
+    email           VARCHAR(30),
+    data_utworzenia DATE
+);
+
+ALTER TABLE pracownik
+    ADD CONSTRAINT pracownik__un UNIQUE ( login,
+                                          pesel,
+                                          email );
+
+ALTER TABLE logowanie
+    ADD CONSTRAINT logowanie_pracownik_fk FOREIGN KEY ( id_pracownik )
+        REFERENCES pracownik ( id );
+        
+	
+    SELECT p.login, l.haslo FROM pracownik p JOIN logowanie l on l.id_pracownik = p.id WHERE login='admin' AND haslo= 'admin'
+    INSERT INTO klient (imie,nazwisko,plec,pesel,numerdowodu,numertelefonu,email,data_utworzenia) VALUES ('"+imie+"','"+nazwisko+"','"+plec+"','"+pesel+"','"+numerDowodu+"','"+numerTelefonu+"','"+email+"',current_date);
+    
+    select * from pokoje;
+    CREATE TABLE pokoje (
+    id          INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    numerpokoju INTEGER,
+    ileosob     INTEGER,
+    ilelozek    INTEGER,
+    cenadoba    VARCHAR(5),
+    status      VARCHAR(15),
+    opis        VARCHAR(30),
+    telewizor   BOOLEAN,
+    wifi        BOOLEAN,
+    toaleta     BOOLEAN,
+    aneks       BOOLEAN,
+    balkon      BOOLEAN
+);
+
+CREATE TABLE rezerwacja (
+    id              INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    data_od DATE,
+    data_do         DATE,
+    ilosc_dob       INTEGER,
+    koszt           INTEGER,
+    czy_rozliczona  BOOLEAN,
+    pokoje_id       INTEGER NOT NULL,
+    pracownik_id    INTEGER NOT NULL,
+    klient_id       INTEGER NOT NULL
+);
+
+
+ALTER TABLE rezerwacja
+    ADD CONSTRAINT rezerwacja_klient_fk FOREIGN KEY ( klient_id )
+        REFERENCES klient ( id );
+
+ALTER TABLE rezerwacja
+    ADD CONSTRAINT rezerwacja_pokoje_fk FOREIGN KEY ( pokoje_id )
+        REFERENCES pokoje ( id );
+
+ALTER TABLE rezerwacja
+    ADD CONSTRAINT rezerwacja_pracownik_fk FOREIGN KEY ( pracownik_id )
+        REFERENCES pracownik ( id );
+
+-- Some of SQL queries used
+
+-- Latest employee in database
+select login,data_utworzenia from pracownik order by data_utworzenia desc limit 1 
+
+-- Total count of reservations done by employee
+SELECT login,count(*) from rezerwacja r join pracownik p ON p.id=r.pracownik_id where pracownik_id = '1' 
+
+-- Average days and cost of reservations 
+select ROUND(avg(ilosc_dob)) from rezerwacja
+select ROUND(avg(koszt)) from rezerwacja
+
+-- Finding employee
+SELECT l.id,p.login, l.haslo FROM pracownik p JOIN logowanie l on l.id_pracownik = p.id WHERE login='' AND haslo= ''
+
+-- Inserting new clients to database
+INSERT INTO klient (imie,nazwisko,plec,pesel,numerdowodu,numertelefonu,email,data_utworzenia) VALUES ('"+imie+"','"+nazwisko+"','"+plec+"','"+pesel+"','"+numerDowodu+"','"+numerTelefonu+"','"+email+"',current_date);
+
+-- Selecting clients with paid-off reservation
+select distinct k.id, k.imie, k.plec, k.nazwisko, k.pesel, k.numerdowodu, k.numertelefonu, k.email, k.data_utworzenia from rezerwacja r join klient k ON r.klient_id = k.id where czy_rozliczona =1
+
+-- Selecting clients with no active reservations ordered by date
+select * from klient where id not in (select klient_id FROM rezerwacja) ORDER BY data_utworzenia asc  
+
+-- Finding specific client reservation data 
+select r.id, pr.login,data_od,data_do, ilosc_dob, koszt, czy_rozliczona,  p.numerpokoju, k.imie, k.nazwisko  from rezerwacja r join pokoje p on p.id = r.pokoje_id join pracownik pr on pr.id = r.pracownik_id join klient k on k.id = r.klient_id
+WHERE czy_rozliczona = '1' AND k.nazwisko = "Nowacki"
+
+-- Finding reservation data
+select imie,nazwisko,pesel,numertelefonu,email,numerdowodu,numerpokoju,data_od,data_do,ilosc_dob,r.koszt from rezerwacja r JOIN klient k ON k.id = r.klient_id JOIN pokoje p ON p.id = r.pokoje_id
+
+-- Inserting new reservation 
+INSERT INTO rezerwacja (data_od,data_do,ilosc_dob,koszt,czy_rozliczona,pokoje_id,pracownik_id,klient_id) VALUES(data_od,data_do,ilosc_dob,koszt,czy_rozliczona,pokoje_id,pracownik_id,klient_id);
+
+select id, imie, nazwisko, plec, pesel, numerdowodu as nr_dowodu, numertelefonu as nr_tel, email, data_utworzenia from klient
+-- Inserting new employee
+INSERT INTO pracownik (login,imie,nazwisko,plec,pesel,numer_telefonu,email,data_utworzenia) VALUES('hostrowski','Hubert','Ostrowski','m','99072500185','999425019','hostr@mail.com',CURRENT_DATE)
+
+-- Inserting new client
+INSERT INTO klient (imie,nazwisko,plec,pesel,numerdowodu,numertelefonu,email,data_utworzenia) VALUES ('imie','nazwisko','plec','pesel','numerdowodu','numertelefonu','email',current_date);
+
+
+
+
+
