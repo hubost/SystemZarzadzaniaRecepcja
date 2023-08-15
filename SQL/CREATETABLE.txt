@@ -1,0 +1,71 @@
+CREATE TABLE logowanie (
+    id           INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    id_pracownik INTEGER NOT NULL,
+    haslo        VARCHAR(20)
+);
+
+CREATE TABLE pracownik (
+    id              INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    login           VARCHAR(15) NOT NULL,
+    imie            VARCHAR(30),
+    nazwisko        VARCHAR(30),
+    plec            VARCHAR(1),
+    pesel           VARCHAR(11) NOT NULL,
+    numer_telefonu  VARCHAR(9),
+    email           VARCHAR(30),
+    data_utworzenia DATE
+);
+
+ALTER TABLE pracownik
+    ADD CONSTRAINT pracownik__un UNIQUE ( login,
+                                          pesel,
+                                          email );
+
+ALTER TABLE logowanie
+    ADD CONSTRAINT logowanie_pracownik_fk FOREIGN KEY ( id_pracownik )
+        REFERENCES pracownik ( id );
+        
+	
+    SELECT p.login, l.haslo FROM pracownik p JOIN logowanie l on l.id_pracownik = p.id WHERE login='admin' AND haslo= 'admin'
+    INSERT INTO klient (imie,nazwisko,plec,pesel,numerdowodu,numertelefonu,email,data_utworzenia) VALUES ('"+imie+"','"+nazwisko+"','"+plec+"','"+pesel+"','"+numerDowodu+"','"+numerTelefonu+"','"+email+"',current_date);
+    
+    select * from pokoje;
+    CREATE TABLE pokoje (
+    id          INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    numerpokoju INTEGER,
+    ileosob     INTEGER,
+    ilelozek    INTEGER,
+    cenadoba    VARCHAR(5),
+    status      VARCHAR(15),
+    opis        VARCHAR(30),
+    telewizor   BOOLEAN,
+    wifi        BOOLEAN,
+    toaleta     BOOLEAN,
+    aneks       BOOLEAN,
+    balkon      BOOLEAN
+);
+
+CREATE TABLE rezerwacja (
+    id              INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    data_od DATE,
+    data_do         DATE,
+    ilosc_dob       INTEGER,
+    koszt           INTEGER,
+    czy_rozliczona  BOOLEAN,
+    pokoje_id       INTEGER NOT NULL,
+    pracownik_id    INTEGER NOT NULL,
+    klient_id       INTEGER NOT NULL
+);
+
+
+ALTER TABLE rezerwacja
+    ADD CONSTRAINT rezerwacja_klient_fk FOREIGN KEY ( klient_id )
+        REFERENCES klient ( id );
+
+ALTER TABLE rezerwacja
+    ADD CONSTRAINT rezerwacja_pokoje_fk FOREIGN KEY ( pokoje_id )
+        REFERENCES pokoje ( id );
+
+ALTER TABLE rezerwacja
+    ADD CONSTRAINT rezerwacja_pracownik_fk FOREIGN KEY ( pracownik_id )
+        REFERENCES pracownik ( id );
