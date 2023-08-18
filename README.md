@@ -57,6 +57,25 @@ The programming environment used was Netbeans IDE 15, MySQL Workbench 8.0, and t
 <h3>In this tab we can insert new rooms into the database with choosing the amount of beds, preffered amount of people or cost per night.</h3>
 
 ![image](https://github.com/hubost/SystemZarzadzaniaRecepcja/assets/103451733/96716f5f-420a-4321-9a82-5fc610b478df)
+<br>
+<h2>📞Reservation Manage Panel (Reservation List)</h2>
+<h3>The window presents us with a customer list along with all the necessary information. The list informs us about the number of nights, total cost, date, and whether the reservation has been settled. We can sort the results by date, customer name, or settlement.</h3>
 
+![image](https://github.com/hubost/SystemZarzadzaniaRecepcja/assets/103451733/f931b2ff-df9b-4939-8b47-c95cdae9a4e2)
+<br>
+<h2>📞Reservation Manage Panel (Make a Reservation)</h2>
+<h3>In the following tab, we can make a reservation using either the ID or the PESEL number of the customer. After selecting the number of people and the check-in/check-out dates, available rooms along with their prices are displayed. Upon selecting a room, a summary will be shown, and after reviewing it, we can confirm the reservation.</h3>
 
+![image](https://github.com/hubost/SystemZarzadzaniaRecepcja/assets/103451733/00790a69-ce3d-472a-bfd1-7be257cc123d)
+<br>
+<h2>💸Settlement Panel</h2>
+<h3>IIn the settlement window, we have the option to settle a customer's reservation. We can search for it using the ID, PESEL number of the customer, room number or reservation ID. <br>
+If the settlement is successful, the reservation is recorded in the database as history, and the room status is updated to available.</h3>
+
+![image](https://github.com/hubost/SystemZarzadzaniaRecepcja/assets/103451733/2356314c-c69c-4be5-b1ff-4bf7b4dc2e8b)
+<br>
+<h2>🗒️ Statistics Panel (Reservation List)</h2>
+<h3>The last panel is the statistics panel. It displays general property statistics and allows for a quick overview of room statuses. It includes, among other things, the average cost, average length of stay, and average age of customers with a breakdown by gender.</h3>
+
+![image](https://github.com/hubost/SystemZarzadzaniaRecepcja/assets/103451733/7fee05f6-e492-422c-9fbd-fcd4015d8533)
 
