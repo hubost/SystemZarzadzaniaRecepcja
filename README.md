@@ -16,7 +16,8 @@ The programming environment used was Netbeans IDE 15, MySQL Workbench 8.0, and t
 
  <h2> Presentation</h2>
 ⚠️ All the data of customers in the database is random and does not correspond to real-life information. <br>
-⚠️ SQL Diagrams are shown at the end of presentation.
+⚠️ SQL Diagrams are shown at the end of presentation.<br>
+⚠️ Goal and motivation are shown at the end of presentation.
 <h2>🍏 Logging screen </h2> 
 <h3>We can log in using our login and password, however if we are logging for the first time (when our login is in database inserted by admin) we choose "First Login" button to set our password.</h3>
 
@@ -78,4 +79,28 @@ If the settlement is successful, the reservation is recorded in the database as 
 <h3>The last panel is the statistics panel. It displays general property statistics and allows for a quick overview of room statuses. It includes, among other things, the average cost, average length of stay, and average age of customers with a breakdown by gender.</h3>
 
 ![image](https://github.com/hubost/SystemZarzadzaniaRecepcja/assets/103451733/7fee05f6-e492-422c-9fbd-fcd4015d8533)
+
+<h2>Database diagrams</h2><br>
+<H2>🔷Concept Model</H2>
+
+![image](https://github.com/hubost/SystemZarzadzaniaRecepcja/assets/103451733/238176de-9280-4fca-ab26-851f44c18849)
+<H2>🔷Logical Diagram</H2>
+
+![image](https://github.com/hubost/SystemZarzadzaniaRecepcja/assets/103451733/2e37f042-1a63-48bd-9180-e16153b65877)
+<H2>🔷Physical Diagram</H2>
+
+![image](https://github.com/hubost/SystemZarzadzaniaRecepcja/assets/103451733/1d4ba74e-a128-404e-90a6-a848e4213b9c)
+
+<h2>📖Libraries</h2>
+<h3>
+ 💠Swing <br>
+ 💠JCalendar <br>
+ 💠Rs2xml <br>
+ 💠DbUtils <br>
+ 💠Mysql-connector-j-8.1.0
+</h3>
+<h1>🥇Goal and Motivation</h1><br>
+PL<br>
+<h2>Moim głównym celem było stworzenie programu zdolnego do zarządzania recepcją lokalnej bazy danych obiektu hotelowego. Program pozwala na bieżące zarządzanie i śledzenie rezerwacji, a także ukazuje statystyki obiektu. Moim drugim głównym celem było stworzenie spójnej bazy danych, która miałaby swoją prezentację i użycie w programie z graficznym interfejsem użytkownika.</h2><br>ENG<br>
+<h2>My main goal was to create a program capable of managing the reception of a local hotel database. The program allows for real-time management and tracking of reservations, as well as presenting statistics. My second main goal however was to create a consistent database that would have its presentation and usage in a program with a graphical user interface.</h2>
 
