@@ -1,3 +1,12 @@
+ENG
+
+<h3>Hotel Reception Managment System</h5>
+
+<br>Desktop application project connected to a local database for managing reception tasks in tourist facilities.
+<br>The application allows for managing hotel guest reservations and financial settlements, client management and their data, employees, rooms, and displays comprehensive facility and reservation statistics.<br>
+The programming environment used was Netbeans IDE 15, MySQL Workbench 8.0, and the diagrams as well as the database project itself were created in Oracle SQL Developer Data Modeler<br>
+<h4>Created with Java & SQL.</h4><br>
+
 PL<br>
 <h3>System Zarządzania Recepcją Hotelową</h5>
 
@@ -5,14 +14,6 @@ Projekt aplikacji desktopowej połączonej z lokalną bazą danych do obsługi r
 Aplikacja pozwala na zarządzanie rezerwacjami oraz rozliczeniami gości hotelowych, zarządzanie klientami oraz ich danymi, pracownikami, pokojami oraz wyświetla łączne statystyki obiektu i rezerwacji. <br>
 Środowiskiem programistycznym był Netbeans IDE 15, MySQL Workbench 8.0 a diagramy jak i sam projekt bazy danych zostały stworzone w Oracle SQL Developer Data Modeler.<br>
 <h4>Stworzony z wykorzystaniem Javy i SQL.<br></h4>
-<br>ENG
-
-<h3>Hotel Reception Managment System</h5>
-
-<br>Desktop application project connected to a local database for managing reception tasks in tourist facilities.
-<br>The application allows for managing hotel guest reservations and financial settlements, client management and their data, employees, rooms, and displays comprehensive facility and reservation statistics.<br>
-The programming environment used was Netbeans IDE 15, MySQL Workbench 8.0, and the diagrams as well as the database project itself were created in Oracle SQL Developer Data Modeler<br>
-<h4>Created with Java & SQL.</h4>
 
  <h2> Presentation</h2>
 ⚠️ All the data of customers in the database is random and does not correspond to real-life information. <br>
@@ -100,7 +101,8 @@ If the settlement is successful, the reservation is recorded in the database as 
  💠Mysql-connector-j-8.1.0
 </h3>
 <h1>🥇Goal and Motivation</h1><br>
+ENG<br>
+<h2>My main goal was to create a program capable of managing the reception of a local hotel database. The program allows for real-time management and tracking of reservations, as well as presenting statistics. My second main goal however was to create a consistent database that would have its presentation and usage in a program with a graphical user interface.</h2><br>
 PL<br>
-<h2>Moim głównym celem było stworzenie programu zdolnego do zarządzania recepcją lokalnej bazy danych obiektu hotelowego. Program pozwala na bieżące zarządzanie i śledzenie rezerwacji, a także ukazuje statystyki obiektu. Moim drugim głównym celem było stworzenie spójnej bazy danych, która miałaby swoją prezentację i użycie w programie z graficznym interfejsem użytkownika.</h2><br>ENG<br>
-<h2>My main goal was to create a program capable of managing the reception of a local hotel database. The program allows for real-time management and tracking of reservations, as well as presenting statistics. My second main goal however was to create a consistent database that would have its presentation and usage in a program with a graphical user interface.</h2>
+<h2>Moim głównym celem było stworzenie programu zdolnego do zarządzania recepcją lokalnej bazy danych obiektu hotelowego. Program pozwala na bieżące zarządzanie i śledzenie rezerwacji, a także ukazuje statystyki obiektu. Moim drugim głównym celem było stworzenie spójnej bazy danych, która miałaby swoją prezentację i użycie w programie z graficznym interfejsem użytkownika.</h2>
 
