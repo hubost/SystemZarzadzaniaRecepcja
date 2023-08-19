@@ -24,7 +24,6 @@ Aplikacja pozwala na zarządzanie rezerwacjami oraz rozliczeniami gości hotelow
 
 ![image](https://github.com/hubost/SystemZarzadzaniaRecepcja/assets/103451733/fb9cb8de-e75c-4448-acbd-d2e297e34522)
 
-
 <h2>📗Menu View </h2>
 <h3>We can freely navigate through the panels by clicking on their names. As an admin we are able to manage the employees data with button redirecting to employees panel.</h3>
 
